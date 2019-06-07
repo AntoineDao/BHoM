@@ -1,6 +1,6 @@
-/*
+﻿/*
  * This file is part of the Buildings and Habitats object Model (BHoM)
- * Copyright (c) 2015 - 2018, the respective contributors. All rights reserved.
+ * Copyright (c) 2015 - 2019, the respective contributors. All rights reserved.
  *
  * Each contributor holds copyright over their respective contributions.
  * The project versioning (Git) records all such contribution source information.
@@ -36,8 +36,8 @@ namespace BH.oM.Environment.Results
         /**** Properties                                ****/
         /***************************************************/
 
-        public ProfileResultUnits ResultUnit { get; set; } = ProfileResultUnits.Undefined;
-        public ProfileResultType ResultType { get; set; } = ProfileResultType.Undefined;
+        public ProfileResultUnit Unit { get; set; } = ProfileResultUnit.Undefined;
+        public ProfileResultType Type { get; set; } = ProfileResultType.Undefined;
         public List<double> Results { get; set; } = new List<double>();
     }
 }

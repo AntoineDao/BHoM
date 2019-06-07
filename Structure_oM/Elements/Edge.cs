@@ -1,6 +1,6 @@
 /*
  * This file is part of the Buildings and Habitats object Model (BHoM)
- * Copyright (c) 2015 - 2018, the respective contributors. All rights reserved.
+ * Copyright (c) 2015 - 2019, the respective contributors. All rights reserved.
  *
  * Each contributor holds copyright over their respective contributions.
  * The project versioning (Git) records all such contribution source information.
@@ -21,23 +21,24 @@
  */
 
 using BH.oM.Base;
-using BH.oM.Common;
 using BH.oM.Geometry;
-using BH.oM.Structure.Properties.Constraint;
+using BH.oM.Structure.Constraints;
+using BH.oM.Analytical.Elements;
 
 namespace BH.oM.Structure.Elements
 {
     /// <summary>
     /// BH.oM edge class to describe the edges of panels (or other objects) by a curve plus properties
     /// </summary>
-    public class Edge : BHoMObject, IElement1D
+    public class Edge : BHoMObject, IElement1D, IEdge
     {
         /***************************************************/
         /**** Properties                                ****/
         /***************************************************/
                 
         public ICurve Curve { get; set; }
-        public Constraint4DOF Constraint { get; set; } = null;
+        public Constraint4DOF Release { get; set; } = null;
+        public Constraint6DOF Support { get; set; } = null;
 
         
         /***************************************************/

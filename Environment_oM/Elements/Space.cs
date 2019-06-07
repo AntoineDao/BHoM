@@ -1,6 +1,6 @@
-/*
+﻿/*
  * This file is part of the Buildings and Habitats object Model (BHoM)
- * Copyright (c) 2015 - 2018, the respective contributors. All rights reserved.
+ * Copyright (c) 2015 - 2019, the respective contributors. All rights reserved.
  *
  * Each contributor holds copyright over their respective contributions.
  * The project versioning (Git) records all such contribution source information.
@@ -20,29 +20,25 @@
  * along with this code. If not, see <https://www.gnu.org/licenses/lgpl-3.0.html>.      
  */
 
+using System;
 using System.Collections.Generic;
-using BH.oM.Base;
-using BH.oM.Geometry;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-using BH.oM.Environment.Interface;
+using BH.oM.Base;
+
+using BH.oM.Environment.Fragments;
+using BH.oM.Environment.Gains;
 
 namespace BH.oM.Environment.Elements
 {
-    public class Space : BHoMObject, IBuildingObject
+    public class Space : BHoMObject, IEnvironmentObject
     {
-        /***************************************************/
-        /**** Properties                                ****/
-        /***************************************************/
+        public List<string> Zones { get; set; } = new List<string>();
+        public List<IGain> Gains { get; set; } = new List<IGain>();
+        public SpaceType Type { get; set; } = SpaceType.Undefined;
 
-        public string Number { get; set; } = "";
-        public Point Location { get; set; } = new Point();
-
-        public List<InternalCondition> InternalConditions { get; set; } = new List<InternalCondition>();
-        public double HeatingLoad { get; set; } = 0.0;
-        public double CoolingLoad { get; set; } = 0.0;
-
-        public List<IBHoMExtendedProperties> ExtendedProperties { get; set; } = new List<IBHoMExtendedProperties>();
-
-        /***************************************************/
+        public List<IBHoMFragment> FragmentProperties { get; set; } = new List<IBHoMFragment>();
     }
 }

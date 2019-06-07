@@ -1,6 +1,6 @@
-/*
+﻿/*
  * This file is part of the Buildings and Habitats object Model (BHoM)
- * Copyright (c) 2015 - 2018, the respective contributors. All rights reserved.
+ * Copyright (c) 2015 - 2019, the respective contributors. All rights reserved.
  *
  * Each contributor holds copyright over their respective contributions.
  * The project versioning (Git) records all such contribution source information.
@@ -20,23 +20,32 @@
  * along with this code. If not, see <https://www.gnu.org/licenses/lgpl-3.0.html>.      
  */
 
-using BH.oM.Base;
-using BH.oM.Environment.Interface;
-using BH.oM.Geometry;
-
+using System;
 using System.Collections.Generic;
+using BH.oM.Geometry;
+using BH.oM.Base;
+using BH.oM.Geometry;
+using BH.oM.Analytical.Elements;
+using BH.oM.Environment.Fragments;
+using BH.oM.Physical.Constructions;
 
 namespace BH.oM.Environment.Elements
 {
-    public class Opening : BHoMObject, IBuildingObject, IElement2D
+    public class Opening : BHoMObject, IEnvironmentObject, IOpening<Edge>, IElement2D
     {
         /***************************************************/
         /**** Properties                                ****/
         /***************************************************/
 
-        public ICurve OpeningCurve { get; set; } = new PolyCurve();
+        public List<Edge> Edges { get; set; } = new List<Edge>();
+        public IConstruction FrameConstruction { get; set; } = new Construction();
 
-        public List<IBHoMExtendedProperties> ExtendedProperties { get; set; } = new List<IBHoMExtendedProperties>();
+        public List<Edge> InnerEdges { get; set; } = new List<Edge>();
+        public IConstruction OpeningConstruction { get; set; } = new Construction();
+
+        public OpeningType Type { get; set; } = OpeningType.Undefined;
+
+        public List<IBHoMFragment> FragmentProperties { get; set; } = new List<IBHoMFragment>();
 
         /***************************************************/
     }

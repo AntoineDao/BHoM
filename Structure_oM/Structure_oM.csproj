@@ -55,15 +55,13 @@
     <Compile Include="Elements\FEMeshFace.cs" />
     <Compile Include="Elements\FramingElement.cs" />
     <Compile Include="Elements\IAreaElement.cs" />
-    <Compile Include="Elements\IPhysical.cs" />
-    <Compile Include="Elements\MeshFace.cs" />
     <Compile Include="Elements\Node.cs" />
     <Compile Include="Elements\Opening.cs" />
-    <Compile Include="Elements\PanelFreeForm.cs" />
-    <Compile Include="Elements\PanelPlanar.cs" />
+    <Compile Include="Elements\Surface.cs" />
+    <Compile Include="Elements\Panel.cs" />
     <Compile Include="Elements\RigidLink.cs" />
     <Compile Include="Loads\AreaTemperatureLoad.cs" />
-    <Compile Include="Loads\AreaUniformalyDistributedLoad.cs" />
+    <Compile Include="Loads\AreaUniformlyDistributedLoad.cs" />
     <Compile Include="Loads\BarPointLoad.cs" />
     <Compile Include="Loads\BarPrestressLoad.cs" />
     <Compile Include="Loads\BarTemperatureLoad.cs" />
@@ -81,57 +79,48 @@
     <Compile Include="Loads\Loadcombination.cs" />
     <Compile Include="Loads\PointAcceleration.cs" />
     <Compile Include="Loads\PointDisplacement.cs" />
-    <Compile Include="Loads\PointForce.cs" />
+    <Compile Include="Loads\PointLoad.cs" />
     <Compile Include="Loads\PointVelocity.cs" />
-    <Compile Include="Properties\Constraints\BarRelease.cs" />
-    <Compile Include="Properties\Constraints\Constraint3DOF.cs" />
-    <Compile Include="Properties\Constraints\Constraint4DOF.cs" />
-    <Compile Include="Properties\Constraints\Constraint6DOF.cs" />
-    <Compile Include="Properties\Constraints\LinkConstraint.cs" />
-    <Compile Include="Properties\Section\Enums\CableType.cs" />
-    <Compile Include="Properties\Constraints\Enums\DOFType.cs" />
-    <Compile Include="Properties\Surface\Enums\LoadPanelSupportConditions.cs" />
-    <Compile Include="Properties\Surface\Enums\PanelDirection.cs" />
-    <Compile Include="Properties\Surface\Enums\PanelModifier.cs" />
-    <Compile Include="Properties\Surface\Enums\PanelType.cs" />
-    <Compile Include="Properties\Section\Enums\ReinforcementPattern.cs" />
-    <Compile Include="Properties\Section\Enums\ShapeType.cs" />
-    <Compile Include="Properties\Section\Enums\SteelFabrication.cs" />
-    <Compile Include="Properties\Section\Enums\SteelPlateRestraint.cs" />
-    <Compile Include="Properties\Framing\ConstantFramingElementProperty.cs" />
-    <Compile Include="Properties\Framing\IFramingElementProperty.cs" />
-    <Compile Include="Properties\Offset.cs" />
-    <Compile Include="Properties\Surface\ConcreteRibbed.cs" />
-    <Compile Include="Properties\Surface\ConcreteWaffle.cs" />
-    <Compile Include="Properties\Surface\ConstantThickness.cs" />
-    <Compile Include="Properties\Surface\ISurfaceProperty.cs" />
-    <Compile Include="Properties\Surface\LoadingPanel.cs" />
-    <Compile Include="Properties\Section\CableSection.cs" />
-    <Compile Include="Properties\Section\CompositeSection.cs" />
-    <Compile Include="Properties\Section\ConcreteSection.cs" />
-    <Compile Include="Properties\Section\ExplicitSection.cs" />
-    <Compile Include="Properties\Section\ISectionProperty.cs" />
-    <Compile Include="Properties\Section\ShapeProfiles\AngleProfile.cs" />
-    <Compile Include="Properties\Section\ShapeProfiles\BoxProfile.cs" />
-    <Compile Include="Properties\Section\ShapeProfiles\ChannelProfile.cs" />
-    <Compile Include="Properties\Section\ShapeProfiles\CircleProfile.cs" />
-    <Compile Include="Properties\Section\ShapeProfiles\FabricatedBoxProfile.cs" />
-    <Compile Include="Properties\Section\ShapeProfiles\FabricatedISectionProfile.cs" />
-    <Compile Include="Properties\Section\ShapeProfiles\FreeFormProfile.cs" />
-    <Compile Include="Properties\Section\ShapeProfiles\GeneralisedFabricatedBoxProfile.cs" />
-    <Compile Include="Properties\Section\ShapeProfiles\GeneralisedTSectionProfile.cs" />
-    <Compile Include="Properties\Section\ShapeProfiles\IProfile.cs" />
-    <Compile Include="Properties\Section\ShapeProfiles\ISectionProfile.cs" />
-    <Compile Include="Properties\Section\ShapeProfiles\KiteProfile.cs" />
-    <Compile Include="Properties\Section\ShapeProfiles\RectangleProfile.cs" />
-    <Compile Include="Properties\Section\ShapeProfiles\TSectionProfile.cs" />
-    <Compile Include="Properties\Section\ShapeProfiles\TubeProfile.cs" />
-    <Compile Include="Properties\Section\ShapeProfiles\ZSectionProfile.cs" />
-    <Compile Include="Properties\Section\Reinforcement\LayerReinforcement.cs" />
-    <Compile Include="Properties\Section\Reinforcement\PerimeterReinforcement.cs" />
-    <Compile Include="Properties\Section\Reinforcement\Reinforcement.cs" />
-    <Compile Include="Properties\Section\Reinforcement\TieReinforcement.cs" />
-    <Compile Include="Properties\Section\SteelSection.cs" />
+    <Compile Include="Constraints\BarRelease.cs" />
+    <Compile Include="Constraints\Constraint3DOF.cs" />
+    <Compile Include="Constraints\Constraint4DOF.cs" />
+    <Compile Include="Constraints\Constraint6DOF.cs" />
+    <Compile Include="Constraints\LinkConstraint.cs" />
+    <Compile Include="MaterialFragments\Aluminium.cs" />
+    <Compile Include="MaterialFragments\Concrete.cs" />
+    <Compile Include="MaterialFragments\Enums\MaterialType.cs" />
+    <Compile Include="MaterialFragments\IIsotropic.cs" />
+    <Compile Include="MaterialFragments\IOrthotropic.cs" />
+    <Compile Include="MaterialFragments\IMaterialFragment.cs" />
+    <Compile Include="MaterialFragments\Steel.cs" />
+    <Compile Include="MaterialFragments\Timber.cs" />
+    <Compile Include="SectionProperties\Enums\CableType.cs" />
+    <Compile Include="Constraints\Enums\DOFType.cs" />
+    <Compile Include="SurfaceProperties\Enums\LoadPanelSupportConditions.cs" />
+    <Compile Include="SurfaceProperties\Enums\PanelDirection.cs" />
+    <Compile Include="SurfaceProperties\Enums\PanelModifier.cs" />
+    <Compile Include="SurfaceProperties\Enums\PanelType.cs" />
+    <Compile Include="SectionProperties\Enums\ReinforcementPattern.cs" />
+    <Compile Include="SectionProperties\Enums\SteelFabrication.cs" />
+    <Compile Include="SectionProperties\Enums\SteelPlateRestraint.cs" />
+    <Compile Include="FramingProperties\ConstantFramingElementProperty.cs" />
+    <Compile Include="FramingProperties\IFramingElementProperty.cs" />
+    <Compile Include="Offsets\Offset.cs" />
+    <Compile Include="SurfaceProperties\ConcreteRibbed.cs" />
+    <Compile Include="SurfaceProperties\ConcreteWaffle.cs" />
+    <Compile Include="SurfaceProperties\ConstantThickness.cs" />
+    <Compile Include="SurfaceProperties\ISurfaceProperty.cs" />
+    <Compile Include="SurfaceProperties\LoadingPanel.cs" />
+    <Compile Include="SectionProperties\CableSection.cs" />
+    <Compile Include="SectionProperties\CompositeSection.cs" />
+    <Compile Include="SectionProperties\ConcreteSection.cs" />
+    <Compile Include="SectionProperties\ExplicitSection.cs" />
+    <Compile Include="SectionProperties\ISectionProperty.cs" />
+    <Compile Include="SectionProperties\Reinforcement\LayerReinforcement.cs" />
+    <Compile Include="SectionProperties\Reinforcement\PerimeterReinforcement.cs" />
+    <Compile Include="SectionProperties\Reinforcement\Reinforcement.cs" />
+    <Compile Include="SectionProperties\Reinforcement\TieReinforcement.cs" />
+    <Compile Include="SectionProperties\SteelSection.cs" />
     <Compile Include="Results\Bar Results\BarDeformation.cs" />
     <Compile Include="Results\Bar Results\BarForce.cs" />
     <Compile Include="Results\Bar Results\BarResult.cs" />
@@ -162,6 +151,10 @@
     <Compile Include="_Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Analytical_oM\Analytical_oM.csproj">
+      <Project>{c91f1981-1148-4a03-b67e-c0bb42d862f4}</Project>
+      <Name>Analytical_oM</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BHoM\BHoM.csproj">
       <Project>{94d88927-62a2-48fc-8efe-d139b67a3373}</Project>
       <Name>BHoM</Name>
@@ -173,6 +166,10 @@
     <ProjectReference Include="..\Geometry_oM\Geometry_oM.csproj">
       <Project>{5B09A2E5-CBF5-43E2-8D98-B5035391DB7B}</Project>
       <Name>Geometry_oM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Physical_oM\Physical_oM.csproj">
+      <Project>{fb790ab1-5914-4797-886f-c4cb469ec168}</Project>
+      <Name>Physical_oM</Name>
     </ProjectReference>
     <ProjectReference Include="..\Reflection_oM\Reflection_oM.csproj">
       <Project>{29E6DCD7-270A-45CC-AC0B-6C024287645E}</Project>

@@ -22,7 +22,7 @@
 
 using System.Collections.Generic;
 using BH.oM.Base;
-using BH.oM.Structure.Properties.Constraint;
+using BH.oM.Structure.Constraints;
 
 namespace BH.oM.Structure.Elements
 {
