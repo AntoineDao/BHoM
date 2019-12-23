@@ -29,16 +29,23 @@ using System.Threading.Tasks;
 using BH.oM.Base;
 
 using BH.oM.Environment.Fragments;
+using System.ComponentModel;
 
 namespace BH.oM.Environment.Elements
 {
+    [Description("An analytical Building data object")]
     public class Building : BHoMObject, IEnvironmentObject
     {
+        [Description("The latitude of the building location")]
         public double Latitude { get; set; } = 0.0;
-        public double Longitude { get; set; } = 0.0;
-        public double Elevation { get; set; } = 0.0;
-        public BuildingType Type { get; set; } = BuildingType.Undefined;
 
-        public List<IBHoMFragment> FragmentProperties { get; set; } = new List<IBHoMFragment>();
+        [Description("The longitude of the building location")]
+        public double Longitude { get; set; } = 0.0;
+
+        [Description("The elevation of the building")]
+        public double Elevation { get; set; } = 0.0;
+
+        [Description("The type of building from the BuildingType enum")]
+        public BuildingType Type { get; set; } = BuildingType.Undefined;
     }
 }

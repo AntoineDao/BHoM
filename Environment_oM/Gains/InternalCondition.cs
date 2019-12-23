@@ -43,11 +43,9 @@ namespace BH.oM.Environment.Gains
 
         public List<SimulationDayType> DayTypes { get; set; } = new List<SimulationDayType>();
 
-        public List<Gain> Gains { get; set; } = new List<Gain>();
+        public List<IGain> Gains { get; set; } = new List<IGain>();
 
         public Thermostat Thermostat { get; set; } = new Thermostat();
-
-        public List<IBHoMFragment> FragmentProperties { get; set; } = new List<IBHoMFragment>();
         /***************************************************/
     }
 }

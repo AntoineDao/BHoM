@@ -31,14 +31,24 @@ using BH.oM.Base;
 using BH.oM.Environment.Fragments;
 using BH.oM.Environment.Gains;
 
+using BH.oM.Geometry;
+using System.ComponentModel;
+
 namespace BH.oM.Environment.Elements
 {
+    [Description("An environment Space data object")]
     public class Space : BHoMObject, IEnvironmentObject
     {
+        [Description("A collection of zone names the space is to be included in")]
         public List<string> Zones { get; set; } = new List<string>();
+
+        [Description("A collection of gains to be applied to the space")]
         public List<IGain> Gains { get; set; } = new List<IGain>();
+
+        [Description("The type of space from the Space Type enum")]
         public SpaceType Type { get; set; } = SpaceType.Undefined;
 
-        public List<IBHoMFragment> FragmentProperties { get; set; } = new List<IBHoMFragment>();
+        [Description("A point in 3D space providing a basic location point of the space")]
+        public Point Location { get; set; } = new Point();
     }
 }

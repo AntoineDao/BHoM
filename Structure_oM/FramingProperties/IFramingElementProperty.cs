@@ -21,9 +21,11 @@
  */
 
 using BH.oM.Base;
+using BH.oM.Reflection.Attributes;
 
 namespace BH.oM.Structure.FramingProperties
 {
+    [Deprecated("2.3", "Replaced by BH.oM.Physical.FramingProperties.IFramingElementProperty in Physical_oM", typeof(Physical.FramingProperties.IFramingElementProperty))]
     public interface IFramingElementProperty : IBHoMObject
     {
     }

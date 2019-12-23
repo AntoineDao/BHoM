@@ -67,6 +67,7 @@
     <Compile Include="Loads\BarTemperatureLoad.cs" />
     <Compile Include="Loads\BarUniformlyDistributedLoad.cs" />
     <Compile Include="Loads\BarVaryingDistributedLoad.cs" />
+    <Compile Include="Loads\GeometricalLineLoad.cs" />
     <Compile Include="Loads\Enums\CaseType.cs" />
     <Compile Include="Loads\Enums\LoadAxis.cs" />
     <Compile Include="Loads\Enums\LoadNature.cs" />
@@ -75,6 +76,7 @@
     <Compile Include="Loads\ICase.cs" />
     <Compile Include="Loads\ILoad.cs" />
     <Compile Include="Loads\Load.cs" />
+    <Compile Include="Loads\ContourLoad.cs" />
     <Compile Include="Loads\Loadcase.cs" />
     <Compile Include="Loads\Loadcombination.cs" />
     <Compile Include="Loads\PointAcceleration.cs" />
@@ -94,6 +96,16 @@
     <Compile Include="MaterialFragments\IMaterialFragment.cs" />
     <Compile Include="MaterialFragments\Steel.cs" />
     <Compile Include="MaterialFragments\Timber.cs" />
+    <Compile Include="Requests\BarResultRequest.cs" />
+    <Compile Include="Requests\Enum\GlobalResultType.cs" />
+    <Compile Include="Requests\Enum\NodeResultType.cs" />
+    <Compile Include="Requests\Enum\BarResultType.cs" />
+    <Compile Include="Requests\Enum\DivisionType.cs" />
+    <Compile Include="Requests\GlobalResultRequest.cs" />
+    <Compile Include="Requests\IStructuralResultRequest.cs" />
+    <Compile Include="Requests\MeshResultRequest.cs" />
+    <Compile Include="Requests\NodeResultRequest.cs" />
+    <Compile Include="Results\Bar Results\BarDisplacement.cs" />
     <Compile Include="SectionProperties\Enums\CableType.cs" />
     <Compile Include="Constraints\Enums\DOFType.cs" />
     <Compile Include="SurfaceProperties\Enums\LoadPanelSupportConditions.cs" />
@@ -139,8 +151,8 @@
     <Compile Include="Results\Mesh\Legacy\MeshStresses.cs" />
     <Compile Include="Results\Mesh\MeshDisplacement.cs" />
     <Compile Include="Results\Mesh\MeshForce.cs" />
+    <Compile Include="Results\Mesh\MeshElementResult.cs" />
     <Compile Include="Results\Mesh\MeshResult.cs" />
-    <Compile Include="Results\Mesh\MeshResults.cs" />
     <Compile Include="Results\Mesh\MeshStress.cs" />
     <Compile Include="Results\Mesh\MeshVonMises.cs" />
     <Compile Include="Results\Nodal Results\NodeAcceleration.cs" />
@@ -154,26 +166,36 @@
     <ProjectReference Include="..\Analytical_oM\Analytical_oM.csproj">
       <Project>{c91f1981-1148-4a03-b67e-c0bb42d862f4}</Project>
       <Name>Analytical_oM</Name>
+      <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\BHoM\BHoM.csproj">
       <Project>{94d88927-62a2-48fc-8efe-d139b67a3373}</Project>
       <Name>BHoM</Name>
+      <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\Common_oM\Common_oM.csproj">
       <Project>{44F6C3BC-D321-4673-8F54-674AE7B33F18}</Project>
       <Name>Common_oM</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Data_oM\Data_oM.csproj">
+      <Project>{239c5f01-f82e-4cce-8598-5134b7756247}</Project>
+      <Name>Data_oM</Name>
     </ProjectReference>
     <ProjectReference Include="..\Geometry_oM\Geometry_oM.csproj">
       <Project>{5B09A2E5-CBF5-43E2-8D98-B5035391DB7B}</Project>
       <Name>Geometry_oM</Name>
+      <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\Physical_oM\Physical_oM.csproj">
       <Project>{fb790ab1-5914-4797-886f-c4cb469ec168}</Project>
       <Name>Physical_oM</Name>
+      <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\Reflection_oM\Reflection_oM.csproj">
       <Project>{29E6DCD7-270A-45CC-AC0B-6C024287645E}</Project>
       <Name>Reflection_oM</Name>
+      <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

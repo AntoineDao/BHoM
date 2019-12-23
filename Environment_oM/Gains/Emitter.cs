@@ -24,22 +24,31 @@ using BH.oM.Environment.Fragments;
 using BH.oM.Base;
 
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace BH.oM.Environment.Gains
 {
+    [Description("An Environment gains Emitter object")]
     public class Emitter : BHoMObject, IEnvironmentObject
     {
         /***************************************************/
         /**** Properties                                ****/
         /***************************************************/
 
+        [Description("The radiant property of the emitter")]
         public double RadiantProportion { get; set; } = 0.0;
-        public double ViewCoefficient { get; set; } = 0.0;
-        public double MaximumOutsideTemperature { get; set; } = 0.0;
-        public double SwitchOffOutsideTemperature { get; set; } = 0.0;
-        public EmitterType Type { get; set; } = EmitterType.Undefined;
 
-        public List<IBHoMFragment> FragmentProperties { get; set; } = new List<IBHoMFragment>();
+        [Description("The view property of the emitter")]
+        public double ViewCoefficient { get; set; } = 0.0;
+
+        [Description("The maximum temperature outside the space the emitter should be working with")]
+        public double MaximumOutsideTemperature { get; set; } = 0.0;
+
+        [Description("The temperature to be used outside the emitter when switched off")]
+        public double SwitchOffOutsideTemperature { get; set; } = 0.0;
+
+        [Description("The type of emitter from the Emitter Type enum")]
+        public EmitterType Type { get; set; } = EmitterType.Undefined;
 
         /***************************************************/
     }

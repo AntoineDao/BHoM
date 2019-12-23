@@ -1,6 +1,6 @@
 /*
  * This file is part of the Buildings and Habitats object Model (BHoM)
- * Copyright (c) 2015 - 2018, the respective contributors. All rights reserved.
+ * Copyright (c) 2015 - 2019, the respective contributors. All rights reserved.
  *
  * Each contributor holds copyright over their respective contributions.
  * The project versioning (Git) records all such contribution source information.
@@ -20,24 +20,52 @@
  * along with this code. If not, see <https://www.gnu.org/licenses/lgpl-3.0.html>.      
  */
 
+using BH.oM.Base;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace BH.oM.Geometry
 {
-    public class NurbsSurface : ISurface
+    public class NurbsSurface : ISurface, IImmutable
     {
         /***************************************************/
         /**** Properties                                ****/
         /***************************************************/
 
-        public List<Point> ControlPoints { get; set; } = new List<Point>();
+        public ReadOnlyCollection<Point> ControlPoints { get; }
 
-        public List<double> Weights { get; set; } = new List<double>();
+        public ReadOnlyCollection<double> Weights { get; }
 
-        public List<double> UKnots { get; set; } = new List<double>();
+        public ReadOnlyCollection<double> UKnots { get; }
 
-        public List<double> VKnots { get; set; } = new List<double>();
-        
+        public ReadOnlyCollection<double> VKnots { get; }
+
+        public int UDegree { get; }
+
+        public int VDegree { get; }
+
+        public ReadOnlyCollection<SurfaceTrim> InnerTrims { get; }
+
+        public ReadOnlyCollection<SurfaceTrim> OuterTrims { get; }
+
+
+        /***************************************************/
+        /**** Constructors                              ****/
+        /***************************************************/
+
+        public NurbsSurface(IEnumerable<Point> controlPoints, IEnumerable<double> weights, IEnumerable<double> uKnots, IEnumerable<double> vKnots, int uDegree, int vDegree, IEnumerable<SurfaceTrim> innerTrims, IEnumerable<SurfaceTrim> outerTrims)
+        {
+            ControlPoints = new ReadOnlyCollection<Point>(controlPoints.ToList());
+            Weights = new ReadOnlyCollection<double>(weights.ToList());
+            UKnots = new ReadOnlyCollection<double>(uKnots.ToList());
+            VKnots = new ReadOnlyCollection<double>(vKnots.ToList());
+            UDegree = uDegree;
+            VDegree = vDegree;
+            InnerTrims = new ReadOnlyCollection<SurfaceTrim>(innerTrims.ToList());
+            OuterTrims = new ReadOnlyCollection<SurfaceTrim>(outerTrims.ToList());
+        }
+
         /***************************************************/
     }
 }

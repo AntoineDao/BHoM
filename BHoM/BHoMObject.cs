@@ -35,6 +35,8 @@ namespace BH.oM.Base
 
         public string Name { get; set; } = "";
 
+        public FragmentSet Fragments { get; set; } = new FragmentSet();
+
         public HashSet<string> Tags { get; set; } = new HashSet<string>();
 
         public Dictionary<string, object> CustomData { get; set; } = new Dictionary<string, object>();

@@ -27,9 +27,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 using BH.oM.Common.Materials;
+using BH.oM.Reflection.Attributes;
 
 namespace BH.oM.Common.Properties
 {
+    [Deprecated("2.3", "Replaced by BH.oM.Physical.Constructions.Layer class in Physical_oM")]
     public class CompoundLayer
     {
         /***************************************************/

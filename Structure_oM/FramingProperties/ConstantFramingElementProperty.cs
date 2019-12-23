@@ -22,9 +22,11 @@
 
 using BH.oM.Base;
 using BH.oM.Structure.SectionProperties;
+using BH.oM.Reflection.Attributes;
 
 namespace BH.oM.Structure.FramingProperties
 {
+    [Deprecated("2.3", "Replaced by BH.oM.Physical.FramingProperties.ConstantFramingProperty in Physical_oM", typeof(Physical.FramingProperties.ConstantFramingProperty))]
     public class ConstantFramingElementProperty : BHoMObject, IFramingElementProperty
     {
         public ISectionProperty SectionProperty { get; set; }
